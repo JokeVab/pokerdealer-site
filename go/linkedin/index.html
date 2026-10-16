@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=https://t.me/PokerDealerAppBot/play">
+<title>Redirecting…</title>
+</head>
+<body>
+<script>
+(function () {
+  var target = 'https://t.me/PokerDealerAppBot/play';
+  try {
+    var id = (crypto.randomUUID ? crypto.randomUUID() : 'anon-' + Math.random().toString(36).slice(2) + Date.now());
+    var payload = {
+      api_key: 'phc_rDR9qcCQBfLa2HobCuXHeYKGAoSgr5sSjQmptjsccc7S',
+      event: 'go_redirect',
+      distinct_id: id,
+      properties: { source: 'linkedin' }
+    };
+    var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+    navigator.sendBeacon('https://eu.i.posthog.com/i/v0/e/', blob);
+  } catch (e) {}
+  location.replace(target);
+})();
+</script>
+<p><a href="https://t.me/PokerDealerAppBot/play">Continue to Poker Dealer</a></p>
+</body>
+</html>

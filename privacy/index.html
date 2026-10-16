@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Poker Dealer</title>
+<meta name="description" content="What Poker Dealer collects, why, where it lives and how long — written in plain language, straight from how the app's code works.">
+<link rel="canonical" href="https://pokerdealer.vip/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pokerdealer.vip/privacy/">
+<meta property="og:title" content="Privacy Policy — Poker Dealer">
+<meta property="og:description" content="What Poker Dealer collects, why, where it lives and how long — written in plain language, straight from how the app's code works.">
+<meta property="og:image" content="https://pokerdealer.vip/assets/avatar-dealer-chip.png">
+<link rel="icon" href="../assets/avatar-dealer-chip.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/analytics.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">
+      <img src="../assets/avatar-dealer-chip.png" alt="" width="32" height="32">
+      Poker Dealer
+    </a>
+    <a class="lang-switch" href="../ru/privacy/">RU</a>
+  </div>
+</header>
+
+<main class="legal on-paper">
+  <div class="wrap">
+    <a class="legal-back" href="../">← Back to Poker Dealer</a>
+    <h1>Privacy Policy — Poker Dealer</h1>
+    <p class="updated">Last updated: 16 October 2026.</p>
+
+    <p>Poker Dealer is a free Telegram Mini App (and a web version at <code>play.pokerdealer.vip</code>) that deals cards for a live home Texas Hold'em game. It's built and run by one person, <strong>Aliaksandr Vabishchevich</strong>, not a company. This page explains what data the app touches, why, where it lives, and how long.</p>
+    <p>Written in plain language on purpose, straight from how the app's code actually works — not a template.</p>
+
+    <h2>What we collect and why</h2>
+    <p><strong>Your name.</strong> Either your Telegram first name (read from Telegram when you open the app there) or a name you type yourself (if you join without Telegram, from <code>play.pokerdealer.vip</code>). Capped at 20 characters. It's shown to the other players at your table so they know who's who — that's the only reason we have it.</p>
+    <p><strong>Telegram account info.</strong> When you open the app inside Telegram, Telegram hands the app your Telegram user id, first name, username and language — signed so we can verify it really came from Telegram, and no older than 24 hours. We use this to tell you apart from other players at the table and to reply in your language. Player names at a table live only in that table's memory and disappear with the room (see "Room and game state" below).</p>
+    <p><strong>Guest login (no Telegram).</strong> If you join from a browser without Telegram, the server gives you a token — a random string plus a signature — instead of a Telegram id. We don't keep a record of this token on our side; it only proves "you're the same person who joined earlier" because the server can re-check the signature. Your browser stores the token and the name you typed (in <code>localStorage</code>, on your device). Practical effect: if our server restarts or redeploys, guest tokens normally stop working and you'd need to rejoin with a name (unless we've configured a server-side signing key to survive restarts, in which case tokens keep working for longer).</p>
+    <p><strong>Analytics events.</strong> We log product events — a room was created or joined, a hand was played or finished, the app crashed, you saw a beginner tip, and similar — to PostHog (analytics tool), hosted in the EU (Frankfurt). Before sending, your Telegram/guest id (or, for the rare event tied to no account, your IP address) is run through a one-way scrambling function (HMAC) with a secret key only we hold, turning it into something like <code>u_a1b2c3…</code> or <code>ip_a1b2c3…</code>. We don't send PostHog your real Telegram id, name or IP. We've turned off PostHog's automatic page/click recording and session replay — only the specific events listed above are sent, each with the specific properties needed to understand that event (e.g. which error happened, which screen).</p>
+    <p><strong>Feedback you send ("Send feedback").</strong> The text you type, plus your name, the room code (if any) and the app build number, is forwarded as a Telegram message straight to the developer's own Telegram chat. It is not saved in any database on our side — once it's a Telegram message, it follows Telegram's own retention, same as any Telegram chat. Limited to 5 messages per person and 30 per IP address per hour, to stop spam.</p>
+    <p><strong>"Share" images.</strong> The image you create with "Share" (your result, a hand, a bluff) is drawn on your own phone. If you're inside Telegram and want to share it to a Story or a chat, we need an https link for it, so the image is temporarily uploaded to the server's memory, given a random, hard-to-guess address, and automatically deleted after about an hour (sooner if the server restarts). If you're outside Telegram, sharing uses your phone's own share sheet and nothing is uploaded. Other players' hidden cards never appear in a share image.</p>
+    <p><strong>Tips to the developer (Telegram Stars).</strong> Tipping is entirely handled by Telegram: Telegram takes the payment and tells our server "this charge happened," with an id. We never see your card or payment details — only that id, and that it's tied to your Telegram account. We keep no tip records in a database; the developer gets a Telegram message naming who tipped, how much, and the charge id. Refunds are manual: you ask (see "Your rights" below) and the developer runs a <code>/refund</code> command in Telegram referencing that charge id.</p>
+    <p><strong>Awards (badges for milestones like hands played, bluffs pulled off, etc.).</strong> This is the one place where we store your actual Telegram id or guest id — not scrambled — because awards need to attach to a specific person across sessions. It's saved in a small database file on our hosting provider (Railway, EU West region), together with your running counts and the awards you've earned with timestamps. Unlike analytics, this isn't anonymized. It's kept until you ask us to delete it or the project shuts down.</p>
+    <p><strong>Voice moves (if you turn this on).</strong> Your phone records a short voice clip (under 256KB) locally and sends it to our server, which forwards it to OpenRouter (a third-party AI service) to turn it into text using a speech-recognition model, so the app can hear "call" or "raise." We discard the audio right after; we don't save it anywhere. OpenRouter processes it to do the transcription — their own privacy policy covers what they do with it on their end, which we don't control.</p>
+    <p><strong>Room and game state</strong> (who's at the table, the cards, the pot). This exists only in the server's working memory while the game is live — never written to a database — and is deleted automatically after an hour with nobody connected, or whenever the server restarts.</p>
+    <p><strong>IP address</strong>, briefly, for abuse prevention (e.g. "don't open more than 10 rooms an hour from one connection"). It's checked against a short-lived in-memory counter and isn't logged or stored permanently.</p>
+    <p><strong>Settings that never leave your device.</strong> Things like sound on/off, keep-screen-awake, the beginner-tips toggle, voice-moves on/off, and "seen this tutorial already" are saved in your browser's <code>localStorage</code>, or (for a couple of tutorial flags) in Telegram's own Cloud Storage so they follow your Telegram account across your devices. We never see these — they don't touch our server.</p>
+
+    <h2>Where things live</h2>
+    <ul>
+      <li><strong>App server and game memory:</strong> Railway, EU West region.</li>
+      <li><strong>Awards database:</strong> same Railway hosting, EU West, on a persistent disk volume.</li>
+      <li><strong>Analytics:</strong> PostHog, EU region (Frankfurt, Germany).</li>
+      <li><strong>Voice transcription:</strong> sent to OpenRouter for processing (US-based service); not stored by us.</li>
+      <li><strong>Telegram-side data</strong> (your Telegram account, messages to the bot, Stars payments): on Telegram's own infrastructure, governed by Telegram's privacy policy.</li>
+    </ul>
+
+    <h2>The landing page (pokerdealer.vip)</h2>
+    <p>The marketing site at <code>pokerdealer.vip</code> uses the same PostHog EU project as the app, configured without cookies (in-memory only — nothing survives closing the tab). It logs: page views, button clicks (which language, which button) with no personal identifiers attached, and which short link (<code>pokerdealer.vip/go/&lt;source&gt;/</code>) brought you in, so we can tell which channels work. No name, account or IP-based profile is built from this.</p>
+    <p>The site itself is hosted on GitHub Pages. Serving any page means GitHub's servers see the standard technical details of that request — your IP address among them — and handle that under GitHub's own privacy policy, outside our control.</p>
+
+    <h2>Your rights</h2>
+    <p>You can ask us (contact below) to:</p>
+    <ul>
+      <li><strong>Tell you what we have</strong> — for most things, this document is a complete answer; for awards specifically, we can look up your exact record.</li>
+      <li><strong>Delete your awards record</strong> — tell us your Telegram username or guest name plus roughly when you played, and we'll remove the row.</li>
+      <li><strong>Delete your analytics trail</strong> — tell us your Telegram username or guest identity; since we hold the scrambling key, we can recompute your pseudonymous id and delete matching events in PostHog.</li>
+      <li><strong>Get a tip refunded</strong> — see "Tips" above; message the bot and we'll refund the full amount.</li>
+      <li><strong>Stop feedback forwarding you sent</strong> — ask and we'll delete the forwarded message from the developer's chat where still possible.</li>
+    </ul>
+
+    <p>Contact: <strong>CONTACT_EMAIL</strong>, or message <strong>@PokerDealerAppBot</strong> directly on Telegram (those messages reach the developer the same way feedback does).</p>
+    <p>This is not legal advice — it's a plain description of what the code actually does, written for players, not lawyers.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Poker Dealer deals cards for home games. It doesn't handle money.</p>
+    <div class="footer-links">
+      <a href="../">Home</a>
+      <a href="../terms/">Terms</a>
+      <a href="../ru/privacy/">Русская версия</a>
+    </div>
+    <p>Contact: CONTACT_EMAIL</p>
+  </div>
+</footer>
+
+</body>
+</html>

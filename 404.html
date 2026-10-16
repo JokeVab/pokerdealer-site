@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Poker Dealer</title>
+<meta name="robots" content="noindex">
+<script>
+  (function () {
+    var host = location.hostname;
+    var base = './';
+    if (host.indexOf('pokerdealer.vip') !== -1) {
+      base = '/';
+    } else if (host.indexOf('github.io') !== -1) {
+      base = '/pokerdealer-site/';
+    }
+    var tag = document.createElement('base');
+    tag.href = base;
+    document.head.appendChild(tag);
+  })();
+</script>
+<link rel="icon" href="assets/avatar-dealer-chip.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <img src="assets/avatar-dealer-chip.png" alt="" width="32" height="32">
+      Poker Dealer
+    </a>
+    <button class="lang-switch" type="button" id="lang-toggle">RU</button>
+  </div>
+</header>
+
+<main class="legal on-paper">
+  <div class="wrap">
+    <div id="lang-en">
+      <h1>Page not found.</h1>
+      <p><a class="btn-primary" href="./">Back to Poker Dealer</a></p>
+    </div>
+    <div id="lang-ru" hidden>
+      <h1>Страница не найдена.</h1>
+      <p><a class="btn-primary" href="ru/">На главную</a></p>
+    </div>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('lang-toggle');
+    var en = document.getElementById('lang-en');
+    var ru = document.getElementById('lang-ru');
+    toggle.addEventListener('click', function () {
+      var toRu = ru.hidden;
+      en.hidden = toRu;
+      ru.hidden = !toRu;
+      document.documentElement.lang = toRu ? 'ru' : 'en';
+      toggle.textContent = toRu ? 'EN' : 'RU';
+    });
+  })();
+</script>
+
+<noscript>
+  <main class="legal on-paper">
+    <div class="wrap">
+      <h1>Page not found</h1>
+      <p><a href="https://pokerdealer.vip/">Poker Dealer — home</a> · <a href="https://pokerdealer.vip/ru/">русская версия</a></p>
+    </div>
+  </main>
+</noscript>
+
+</body>
+</html>

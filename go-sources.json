@@ -1,0 +1,23 @@
+{
+  "targets": {
+    "telegram": "https://t.me/PokerDealerAppBot/play",
+    "web": "https://play.pokerdealer.vip/"
+  },
+  "sources": {
+    "site-en": "telegram",
+    "site-ru": "telegram",
+    "site-en-web": "web",
+    "site-ru-web": "web",
+    "reddit": "telegram",
+    "tg-channel": "telegram",
+    "linkedin": "telegram",
+    "instagram": "telegram",
+    "facebook": "telegram",
+    "vk": "telegram",
+    "alternativeto": "telegram",
+    "tapps": "telegram",
+    "youtube": "telegram",
+    "tiktok": "telegram",
+    "reels": "telegram"
+  }
+}
