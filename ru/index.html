@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/analytics.js" defer></script>
+<script src="../assets/slider.js" defer></script>
 </head>
 <body>
 
@@ -117,21 +118,21 @@
           <h3>Пока один тасует, все ждут.</h3>
           <p>Колоду тасует и сдаёт сервер по одному нажатию. Уметь сдавать за столом не нужно никому.</p>
           <div class="visual-frame">
-            <img src="../assets/screens/lobby.webp" width="390" height="844" loading="lazy" alt="Экран лобби перед раздачей: игроки за столом, кнопка Start Game готова">
+            <img src="../assets/screens/waiting-deal.webp" width="390" height="844" loading="lazy" alt="Итоги раздачи и простая строка статуса: ждём, пока следующий игрок сдаст карты">
           </div>
         </div>
         <div class="pain-card">
           <h3>Сожгли лишнюю карту — и пошёл спор.</h3>
           <p>Карта случайно не перевернётся, и лишнюю никто не сожжёт: какой борд на экране, такой и в игре.</p>
           <div class="visual-frame">
-            <img src="../assets/screens/table.webp" width="390" height="844" loading="lazy" alt="Общий экран стола с бордом — для показа на планшете или ТВ посреди стола">
+            <img src="../assets/screens/board-view.webp" width="390" height="844" loading="lazy" alt="Общий борд в обычной, не отзеркаленной ориентации — одинаковый для всех за столом">
           </div>
         </div>
         <div class="pain-card">
           <h3>«Стоп, а чей ход?»</h3>
           <p>Приложение ведёт очерёдность торговли по правилам холдема. Фишка дилера, блайнды и таймер до их повышения — на экране.</p>
           <div class="visual-frame">
-            <img src="../assets/screens/game.webp" width="390" height="844" loading="lazy" alt="Ход игрока: кнопки Fold / Call / Raise / All-in, блайнды и таймер уровня">
+            <img src="../assets/screens/turn-highlight.webp" width="390" height="844" loading="lazy" alt="Игрок, чей сейчас ход, подсвечен кольцом; на экране кнопка дилера, блайнды и таймер уровня">
           </div>
         </div>
         <div class="pain-card">
@@ -159,8 +160,19 @@
         <div class="visual-frame">
           <img src="../assets/screens/rankings.webp" width="390" height="844" loading="lazy" alt="Шпаргалка комбинаций — от старшей карты до роял-флеша">
         </div>
-        <div class="visual-frame">
-          <img src="../assets/screens/game-over.webp" width="390" height="844" loading="lazy" alt="Экран победителя с итогами вечера">
+        <div class="visual-frame visual-slider">
+          <div class="slider-track">
+            <div class="slider-slide">
+              <img src="../assets/screens/results.webp" width="390" height="844" loading="lazy" alt="Вкладка Results: итоги вечера, лучшая рука и число сыгранных раздач">
+            </div>
+            <div class="slider-slide">
+              <img src="../assets/screens/stats.webp" width="390" height="844" loading="lazy" alt="Вкладка Stats: у каждого игрока — выигранные раздачи, вскрытия, ва-банки, камбэки и неудачи">
+            </div>
+          </div>
+          <div class="slider-dots" aria-hidden="true">
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -226,7 +238,10 @@
           <a class="btn-primary" href="../go/site-ru/" data-cta-block="final">Создать стол</a>
           <p class="cta-caption">Бесплатно · в Telegram или <a class="inline-link" href="../go/site-ru-web/" data-cta-block="final-web">в браузере</a></p>
         </div>
-        <!-- M3: фото стола -->
+        <!-- S22: фото ждёт Q4 -->
+        <div class="visual-frame">
+          <img src="../assets/screens/lobby.webp" width="390" height="844" loading="lazy" alt="Лобби комнаты с кодом приглашения, кнопкой ссылки и списком игроков">
+        </div>
       </div>
     </div>
   </section>

@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/analytics.js" defer></script>
+<script src="assets/slider.js" defer></script>
 </head>
 <body>
 
@@ -117,21 +118,21 @@
           <h3>Shuffling takes forever.</h3>
           <p>The server shuffles and deals on one tap. Nobody at the table has to know how.</p>
           <div class="visual-frame">
-            <img src="assets/screens/lobby.webp" width="390" height="844" loading="lazy" alt="Lobby screen right before dealing: players seated, Start Game button ready">
+            <img src="assets/screens/waiting-deal.webp" width="390" height="844" loading="lazy" alt="Showdown result with a plain status line: waiting for the next player to deal">
           </div>
         </div>
         <div class="pain-card">
           <h3>Misdeals start arguments.</h3>
           <p>No card flips face up by accident and nobody burns one too many. Everyone sees the same board.</p>
           <div class="visual-frame">
-            <img src="assets/screens/table.webp" width="390" height="844" loading="lazy" alt="Shared table display with the community board, laid out for players sitting around it">
+            <img src="assets/screens/board-view.webp" width="390" height="844" loading="lazy" alt="Community board in normal, non-mirrored orientation, same for everyone at the table">
           </div>
         </div>
         <div class="pain-card">
           <h3>"Wait, whose turn is it?"</h3>
           <p>The app follows Hold'em betting order and moves the action along. The dealer button, the blinds and a timer for the next blind level are on screen.</p>
           <div class="visual-frame">
-            <img src="assets/screens/game.webp" width="390" height="844" loading="lazy" alt="Player's turn: Fold / Call / Raise / All-in buttons, blinds and the level timer">
+            <img src="assets/screens/turn-highlight.webp" width="390" height="844" loading="lazy" alt="The player whose turn it is glows with a highlight ring; dealer button, blinds and level timer on screen">
           </div>
         </div>
         <div class="pain-card">
@@ -159,8 +160,19 @@
         <div class="visual-frame">
           <img src="assets/screens/rankings.webp" width="390" height="844" loading="lazy" alt="Hand-rankings cheat sheet, from High Card to Royal Flush">
         </div>
-        <div class="visual-frame">
-          <img src="assets/screens/game-over.webp" width="390" height="844" loading="lazy" alt="Winner screen with the final standings for the night">
+        <div class="visual-frame visual-slider">
+          <div class="slider-track">
+            <div class="slider-slide">
+              <img src="assets/screens/results.webp" width="390" height="844" loading="lazy" alt="Results tab: final standings for the night, best hand and total hands played">
+            </div>
+            <div class="slider-slide">
+              <img src="assets/screens/stats.webp" width="390" height="844" loading="lazy" alt="Stats tab: each player's hands won, showdowns, all-ins, comebacks and bad beats">
+            </div>
+          </div>
+          <div class="slider-dots" aria-hidden="true">
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -226,7 +238,10 @@
           <a class="btn-primary" href="go/site-en/" data-cta-block="final">Start a table</a>
           <p class="cta-caption">Free · in Telegram or <a class="inline-link" href="go/site-en-web/" data-cta-block="final-web">your browser</a></p>
         </div>
-        <!-- M3: фото стола -->
+        <!-- S22: фото ждёт Q4 -->
+        <div class="visual-frame">
+          <img src="assets/screens/lobby.webp" width="390" height="844" loading="lazy" alt="Lobby with the invite code, a link button and the seated players">
+        </div>
       </div>
     </div>
   </section>

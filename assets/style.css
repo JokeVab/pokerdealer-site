@@ -397,6 +397,54 @@ button.lang-switch {
   min-height: 0;
 }
 
+/* ---------- слайдер итогов/статистики (CSS scroll-snap, без библиотек) ---------- */
+
+.visual-slider {
+  position: relative;
+}
+
+.visual-slider .slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.visual-slider .slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.visual-slider .slider-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.visual-slider .slider-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0.6rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.visual-slider .slider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.visual-slider .slider-dot.is-active {
+  background: var(--brass);
+}
+
 /* ---------- FAQ ---------- */
 
 .faq-list { max-width: var(--measure); }
@@ -567,7 +615,8 @@ button.lang-switch {
 .live-poker .visual-frame,
 .pain-card .visual-frame,
 .step .visual-frame,
-.share-frames .visual-frame {
+.share-frames .visual-frame,
+.final-cta .visual-frame {
   aspect-ratio: 390 / 844;
 }
 
@@ -635,8 +684,6 @@ button.lang-switch {
   .live-poker .visual-frame { flex: 1 1 26rem; aspect-ratio: 4 / 3; }
   .live-poker-copy { flex: 1 1 22rem; }
 
-  .pain-card .visual-frame { aspect-ratio: 16 / 10; }
-
   .steps-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -650,6 +697,7 @@ button.lang-switch {
   .final-cta { flex-direction: row; align-items: center; }
   .final-cta-copy { flex: 1 1 22rem; }
   .final-cta .visual-placeholder { flex: 1 1 26rem; width: auto; }
+  .final-cta .visual-frame { flex: 1 1 18rem; width: auto; aspect-ratio: 9 / 16; }
 
   .site-footer .wrap { flex-direction: row; justify-content: space-between; align-items: center; }
 }
