@@ -16,7 +16,7 @@
       api_key: 'phc_rDR9qcCQBfLa2HobCuXHeYKGAoSgr5sSjQmptjsccc7S',
       event: 'go_redirect',
       distinct_id: id,
-      properties: { source: 'tiktok' }
+      properties: { source: 'tiktok', $process_person_profile: false }
     };
     var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
     navigator.sendBeacon('https://eu.i.posthog.com/i/v0/e/', blob);

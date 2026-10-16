@@ -236,7 +236,31 @@ button.lang-switch {
   color: var(--paper-ink-soft);
 }
 
-.hero .visual-placeholder {
+/* ---------- рамка телефона для настоящих скринов/видео ---------- */
+
+.visual-frame {
+  display: block;
+  overflow: hidden;
+  background: rgba(4, 33, 26, 0.55);
+  border: 1px solid rgba(220, 174, 85, 0.35);
+  border-radius: 14px;
+}
+
+.section--paper .visual-frame {
+  background: rgba(36, 26, 18, 0.05);
+  border-color: rgba(110, 26, 39, 0.25);
+}
+
+.visual-frame img,
+.visual-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .visual-placeholder,
+.hero .visual-frame {
   aspect-ratio: 16 / 10;
   min-height: 0;
 }
@@ -249,7 +273,8 @@ button.lang-switch {
   gap: 1.75rem;
 }
 
-.live-poker .visual-placeholder {
+.live-poker .visual-placeholder,
+.live-poker .visual-frame {
   aspect-ratio: 4 / 3;
 }
 
@@ -292,7 +317,8 @@ button.lang-switch {
   margin-bottom: 0.3rem;
 }
 
-.step .visual-placeholder {
+.step .visual-placeholder,
+.step .visual-frame {
   margin-top: 0.75rem;
   aspect-ratio: 9 / 16;
   max-width: 11rem;
@@ -306,7 +332,8 @@ button.lang-switch {
   flex-wrap: wrap;
 }
 
-.steps-visuals .visual-placeholder {
+.steps-visuals .visual-placeholder,
+.steps-visuals .visual-frame {
   flex: 1 1 8rem;
   aspect-ratio: 9 / 16;
   min-height: 0;
@@ -346,6 +373,11 @@ button.lang-switch {
   padding: 1rem;
 }
 
+.pain-card .visual-frame {
+  aspect-ratio: 16 / 10;
+  margin-top: 0.75rem;
+}
+
 /* ---------- расшаренные картинки ---------- */
 
 .share-frames {
@@ -354,7 +386,8 @@ button.lang-switch {
   flex-wrap: wrap;
 }
 
-.share-frames .visual-placeholder {
+.share-frames .visual-placeholder,
+.share-frames .visual-frame {
   flex: 1 1 8rem;
   aspect-ratio: 9 / 16;
   min-height: 0;
@@ -515,10 +548,12 @@ button.lang-switch {
   }
 
   .hero-copy { flex: 1 1 26rem; }
-  .hero .visual-placeholder { flex: 1 1 24rem; aspect-ratio: 4 / 3; }
+  .hero .visual-placeholder,
+  .hero .visual-frame { flex: 1 1 24rem; aspect-ratio: 4 / 3; }
 
   .live-poker { flex-direction: row-reverse; align-items: center; }
-  .live-poker .visual-placeholder { flex: 1 1 26rem; }
+  .live-poker .visual-placeholder,
+  .live-poker .visual-frame { flex: 1 1 26rem; }
   .live-poker-copy { flex: 1 1 22rem; }
 
   .steps-grid {

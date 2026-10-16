@@ -24,7 +24,7 @@
         api_key: 'phc_rDR9qcCQBfLa2HobCuXHeYKGAoSgr5sSjQmptjsccc7S',
         event: 'cta_click',
         distinct_id: id,
-        properties: { lang: document.documentElement.lang, block: el.getAttribute('data-cta-block') },
+        properties: { lang: document.documentElement.lang, block: el.getAttribute('data-cta-block'), $process_person_profile: false },
       };
       var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
       navigator.sendBeacon('https://eu.i.posthog.com/i/v0/e/', blob);
