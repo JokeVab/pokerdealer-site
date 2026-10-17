@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/analytics.js" defer></script>
 <script src="assets/slider.js" defer></script>
+<script src="assets/motion.js" defer></script>
 </head>
 <body>
 
@@ -43,7 +44,7 @@
         <p class="cta-caption">Free · in Telegram or <a class="inline-link" href="go/site-en-web/" data-cta-block="hero-web">your browser</a></p>
       </div>
       <div class="visual-frame" aria-hidden="true">
-        <video src="assets/peek.mp4" poster="assets/peek-poster.webp" width="464" height="348" autoplay loop muted playsinline></video>
+        <video src="assets/peek.mp4" poster="assets/peek-poster.webp" width="464" height="348" data-autoplay loop muted playsinline></video>
       </div>
     </div>
   </section>
@@ -56,8 +57,8 @@
           <p>Everyone sits at one table, and the app never matches you with strangers. Your phone shows your two cards and, when it's your turn, the betting buttons. You peek at the cards by bending the corner, like real ones, and tap Check or Raise.</p>
           <p>The chips are yours to push. Poker Dealer doesn't count them and has no idea how much anyone bet. Want the whole table to see the board? Put it on a tablet, a laptop or the TV in the middle of the table.</p>
         </div>
-        <div class="visual-frame">
-          <img src="assets/screens/game.webp" width="390" height="844" loading="lazy" alt="Player's screen: two hole cards and the Fold / Call / Raise / All-in buttons">
+        <div class="visual-frame visual-frame--photo">
+          <img src="assets/photos/table.webp" width="950" height="1270" loading="lazy" alt="Four friends at a home poker table with chips, phones dealing cards and a tablet showing the board">
         </div>
       </div>
     </div>
@@ -76,7 +77,7 @@
               <h3>Create a table.</h3>
               <p>Open Poker Dealer in Telegram. No Telegram? <a class="inline-link" href="go/site-en-web/" data-cta-block="steps-web">Open in your browser</a>.</p>
               <div class="visual-frame">
-                <img src="assets/screens/start.webp" width="390" height="844" loading="lazy" alt="Start screen with the Host Game and Join Game buttons">
+                <img src="assets/screens/create-table.webp" width="390" height="312" loading="lazy" alt="The app title and the Host Game, Join Game and Connect as table display buttons">
               </div>
             </div>
           </li>
@@ -86,7 +87,7 @@
               <h3>Invite your friends.</h3>
               <p>Send a code or a link, or show the QR. Up to 6 seats. A friend without Telegram opens the link and types a name.</p>
               <div class="visual-frame">
-                <img src="assets/screens/lobby.webp" width="390" height="844" loading="lazy" alt="Lobby with the invite code, a link button and the seated players">
+                <img src="assets/screens/invite-telegram.webp" width="350" height="112" loading="lazy" alt="Invite code with the copy, Telegram share and link/QR buttons">
               </div>
             </div>
           </li>
@@ -96,7 +97,7 @@
               <h3>Deal.</h3>
               <p>One tap, and everyone has two cards on their phone. When a betting round ends, the app opens the flop, then the turn and the river.</p>
               <div class="visual-frame">
-                <img src="assets/screens/game.webp" width="390" height="844" loading="lazy" alt="Player's screen right after the deal: two face-down cards and the betting buttons">
+                <img src="assets/screens/deal-next.webp" width="358" height="188" loading="lazy" alt="Showdown result and the Deal next hand button, as the player whose turn it is to deal sees it">
               </div>
             </div>
           </li>
@@ -115,29 +116,29 @@
       </div>
       <div class="pain-grid">
         <div class="pain-card">
-          <h3>Shuffling takes forever.</h3>
+          <h3>No more waiting on the shuffle.</h3>
           <p>The server shuffles and deals on one tap. Nobody at the table has to know how.</p>
           <div class="visual-frame">
             <img src="assets/screens/waiting-deal.webp" width="390" height="844" loading="lazy" alt="Showdown result with a plain status line: waiting for the next player to deal">
           </div>
         </div>
         <div class="pain-card">
-          <h3>Misdeals start arguments.</h3>
-          <p>No card flips face up by accident and nobody burns one too many. Everyone sees the same board.</p>
+          <h3>Nobody burns an extra card. No arguments.</h3>
+          <p>The app deals every card itself — nothing flips face up by accident. Everyone sees the same board.</p>
           <div class="visual-frame">
             <img src="assets/screens/board-view.webp" width="390" height="844" loading="lazy" alt="Community board in normal, non-mirrored orientation, same for everyone at the table">
           </div>
         </div>
         <div class="pain-card">
-          <h3>"Wait, whose turn is it?"</h3>
+          <h3>Always clear whose turn it is.</h3>
           <p>The app follows Hold'em betting order and moves the action along. The dealer button, the blinds and a timer for the next blind level are on screen.</p>
           <div class="visual-frame">
             <img src="assets/screens/turn-highlight.webp" width="390" height="844" loading="lazy" alt="The player whose turn it is glows with a highlight ring; dealer button, blinds and level timer on screen">
           </div>
         </div>
         <div class="pain-card">
-          <h3>Someone tapped the wrong button.</h3>
-          <p>The host can undo the last action.</p>
+          <h3>A wrong tap? The host can undo it.</h3>
+          <p>The host panel has an Undo last action button: it rolls back the most recent action.</p>
           <div class="visual-frame">
             <img src="assets/screens/host-panel.webp" width="390" height="844" loading="lazy" alt="Host settings panel with the Undo last action button">
           </div>
@@ -178,6 +179,9 @@
       <div class="visual-frame visual-slider visual-slider--solo">
         <div class="slider-track">
           <div class="slider-slide">
+            <img src="assets/screens/table-allin.webp" width="390" height="844" loading="lazy" alt="Table display, two players all-in, three moments of one hand: on the flop Mia has 81% with a Pair and Leo 19% with High Card, on the turn 80% to 20%, on the river Leo makes a Straight and wins">
+          </div>
+          <div class="slider-slide">
             <img src="assets/screens/results.webp" width="390" height="844" loading="lazy" alt="Results tab: final standings for the night, best hand and total hands played">
           </div>
           <div class="slider-slide">
@@ -185,6 +189,7 @@
           </div>
         </div>
         <div class="slider-dots" aria-hidden="true">
+          <span class="slider-dot"></span>
           <span class="slider-dot"></span>
           <span class="slider-dot"></span>
         </div>
@@ -258,8 +263,8 @@
           <a class="btn-primary" href="go/site-en/" data-cta-block="final">Start a table</a>
           <p class="cta-caption">Free · in Telegram or <a class="inline-link" href="go/site-en-web/" data-cta-block="final-web">your browser</a></p>
         </div>
-        <div class="visual-frame visual-frame--photo">
-          <img src="assets/photos/table.webp" width="950" height="1270" loading="lazy" alt="Four friends at a home poker table with chips, phones dealing cards and a tablet showing the board">
+        <div class="visual-frame">
+          <video src="assets/win.mp4" poster="assets/win-poster.webp" width="390" height="844" data-autoplay loop muted playsinline></video>
         </div>
       </div>
     </div>

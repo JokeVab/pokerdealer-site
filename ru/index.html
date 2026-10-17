@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/analytics.js" defer></script>
 <script src="../assets/slider.js" defer></script>
+<script src="../assets/motion.js" defer></script>
 </head>
 <body>
 
@@ -43,7 +44,7 @@
         <p class="cta-caption">Бесплатно · в Telegram или <a class="inline-link" href="../go/site-ru-web/" data-cta-block="hero-web">в браузере</a></p>
       </div>
       <div class="visual-frame" aria-hidden="true">
-        <video src="../assets/peek.mp4" poster="../assets/peek-poster.webp" width="464" height="348" autoplay loop muted playsinline></video>
+        <video src="../assets/peek.mp4" poster="../assets/peek-poster.webp" width="464" height="348" data-autoplay loop muted playsinline></video>
       </div>
     </div>
   </section>
@@ -56,8 +57,8 @@
           <p>Вы сидите за одним столом и видите лица друг друга, а с незнакомцами приложение никого не сводит. На телефоне — ваши две карты, а в ваш ход — кнопки торговли. Карту подсматриваете, загибая уголок на экране, и жмёте Check или Raise.</p>
           <p>Фишки двигаете сами: приложение их не считает и даже не знает, кто сколько поставил. Общие карты можно вывести на планшет, ноутбук или телевизор посреди стола — тогда их видят все сразу.</p>
         </div>
-        <div class="visual-frame">
-          <img src="../assets/screens/game.webp" width="390" height="844" loading="lazy" alt="Экран игрока: две закрытые карты и кнопки Fold / Call / Raise / All-in">
+        <div class="visual-frame visual-frame--photo">
+          <img src="../assets/photos/table.webp" width="950" height="1270" loading="lazy" alt="Четверо друзей за домашним покерным столом с фишками, телефонами с раздачей карт и планшетом с бордом">
         </div>
       </div>
     </div>
@@ -76,7 +77,7 @@
               <h3>Создайте стол.</h3>
               <p>Откройте Poker Dealer в Telegram. Нет Telegram — <a class="inline-link" href="../go/site-ru-web/" data-cta-block="steps-web">откройте в браузере</a>.</p>
               <div class="visual-frame">
-                <img src="../assets/screens/start.webp" width="390" height="844" loading="lazy" alt="Стартовый экран с кнопками Host Game и Join Game">
+                <img src="../assets/screens/create-table.webp" width="390" height="312" loading="lazy" alt="Название приложения и кнопки Host Game, Join Game, Connect as table display">
               </div>
             </div>
           </li>
@@ -86,7 +87,7 @@
               <h3>Позовите друзей.</h3>
               <p>Скиньте код или ссылку либо покажите QR-код. Мест за столом — до шести. Другу без Telegram хватит ссылки и своего имени.</p>
               <div class="visual-frame">
-                <img src="../assets/screens/lobby.webp" width="390" height="844" loading="lazy" alt="Лобби комнаты с кодом приглашения, кнопкой ссылки и списком игроков">
+                <img src="../assets/screens/invite-telegram.webp" width="350" height="112" loading="lazy" alt="Код приглашения и кнопки: скопировать, отправить в Telegram, ссылка/QR">
               </div>
             </div>
           </li>
@@ -96,7 +97,7 @@
               <h3>Раздавайте.</h3>
               <p>Нажали — и у каждого на телефоне по две карты. Когда круг торговли закрыт, приложение само выкладывает флоп, потом тёрн и ривер.</p>
               <div class="visual-frame">
-                <img src="../assets/screens/game.webp" width="390" height="844" loading="lazy" alt="Экран игрока сразу после раздачи: две закрытые карты и кнопки торговли">
+                <img src="../assets/screens/deal-next.webp" width="358" height="188" loading="lazy" alt="Итог раздачи и кнопка Deal next hand глазами игрока, чья очередь сдавать">
               </div>
             </div>
           </li>
@@ -115,29 +116,29 @@
       </div>
       <div class="pain-grid">
         <div class="pain-card">
-          <h3>Пока один тасует, все ждут.</h3>
+          <h3>Ждать, пока один тасует, не придётся.</h3>
           <p>Колоду тасует и сдаёт сервер по одному нажатию. Уметь сдавать за столом не нужно никому.</p>
           <div class="visual-frame">
             <img src="../assets/screens/waiting-deal.webp" width="390" height="844" loading="lazy" alt="Итоги раздачи и простая строка статуса: ждём, пока следующий игрок сдаст карты">
           </div>
         </div>
         <div class="pain-card">
-          <h3>Сожгли лишнюю карту — и пошёл спор.</h3>
-          <p>Карта случайно не перевернётся, и лишнюю никто не сожжёт: какой борд на экране, такой и в игре.</p>
+          <h3>Лишнюю карту никто не сожжёт — спорить не о чем.</h3>
+          <p>Карты раздаёт само приложение, и случайно ни одна не перевернётся. Борд у всех одинаковый.</p>
           <div class="visual-frame">
             <img src="../assets/screens/board-view.webp" width="390" height="844" loading="lazy" alt="Общий борд в обычной, не отзеркаленной ориентации — одинаковый для всех за столом">
           </div>
         </div>
         <div class="pain-card">
-          <h3>«Стоп, а чей ход?»</h3>
+          <h3>Всегда видно, чей ход.</h3>
           <p>Приложение ведёт очерёдность торговли по правилам холдема. Фишка дилера, блайнды и таймер до их повышения — на экране.</p>
           <div class="visual-frame">
-            <img src="../assets/screens/turn-highlight.webp" width="390" height="844" loading="lazy" alt="Игрок, чей сейчас ход, подсвечен кольцом; на экране кнопка дилера, блайнды и таймер уровня">
+            <img src="../assets/screens/turn-highlight.webp" width="390" height="844" loading="lazy" alt="Игрок, чей сейчас ход, подсвечен кольцом; на экране фишка дилера, блайнды и таймер уровня">
           </div>
         </div>
         <div class="pain-card">
-          <h3>Нажал не ту кнопку.</h3>
-          <p>Хост отменит последнее действие.</p>
+          <h3>Нажали не туда — хост отменит.</h3>
+          <p>В панели хоста есть кнопка Undo last action: она откатывает последнее действие.</p>
           <div class="visual-frame">
             <img src="../assets/screens/host-panel.webp" width="390" height="844" loading="lazy" alt="Панель хоста с кнопкой Undo last action">
           </div>
@@ -178,6 +179,9 @@
       <div class="visual-frame visual-slider visual-slider--solo">
         <div class="slider-track">
           <div class="slider-slide">
+            <img src="../assets/screens/table-allin.webp" width="390" height="844" loading="lazy" alt="Экран стола, двое ва-банк, три кадра одной раздачи: на флопе у Mia 81% с Pair, у Leo 19% с High Card, на тёрне 80% против 20%, на ривере Leo собирает Straight и выигрывает">
+          </div>
+          <div class="slider-slide">
             <img src="../assets/screens/results.webp" width="390" height="844" loading="lazy" alt="Вкладка Results: итоги вечера, лучшая рука и число сыгранных раздач">
           </div>
           <div class="slider-slide">
@@ -185,6 +189,7 @@
           </div>
         </div>
         <div class="slider-dots" aria-hidden="true">
+          <span class="slider-dot"></span>
           <span class="slider-dot"></span>
           <span class="slider-dot"></span>
         </div>
@@ -258,8 +263,8 @@
           <a class="btn-primary" href="../go/site-ru/" data-cta-block="final">Создать стол</a>
           <p class="cta-caption">Бесплатно · в Telegram или <a class="inline-link" href="../go/site-ru-web/" data-cta-block="final-web">в браузере</a></p>
         </div>
-        <div class="visual-frame visual-frame--photo">
-          <img src="../assets/photos/table.webp" width="950" height="1270" loading="lazy" alt="Четверо друзей за домашним покерным столом с фишками, телефонами с раздачей карт и планшетом с бордом">
+        <div class="visual-frame">
+          <video src="../assets/win.mp4" poster="../assets/win-poster.webp" width="390" height="844" data-autoplay loop muted playsinline></video>
         </div>
       </div>
     </div>
