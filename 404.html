@@ -50,15 +50,28 @@
   </div>
 </main>
 
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a id="footer-contact-en" href="contact/">Contact</a>
+      <a id="footer-contact-ru" href="ru/contact/" hidden>Связаться</a>
+    </div>
+  </div>
+</footer>
+
 <script>
   (function () {
     var toggle = document.getElementById('lang-toggle');
     var en = document.getElementById('lang-en');
     var ru = document.getElementById('lang-ru');
+    var footerEn = document.getElementById('footer-contact-en');
+    var footerRu = document.getElementById('footer-contact-ru');
     toggle.addEventListener('click', function () {
       var toRu = ru.hidden;
       en.hidden = toRu;
       ru.hidden = !toRu;
+      footerEn.hidden = toRu;
+      footerRu.hidden = !toRu;
       document.documentElement.lang = toRu ? 'ru' : 'en';
       toggle.textContent = toRu ? 'EN' : 'RU';
     });
