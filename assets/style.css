@@ -504,6 +504,16 @@ button.lang-switch {
   margin-bottom: 0.75em;
 }
 
+/* живое фото стола — своя пропорция, не рамка телефона */
+.visual-frame--photo {
+  border-radius: 18px;
+  box-shadow: 0 10px 24px -10px rgba(4, 33, 26, 0.6);
+}
+
+.final-cta .visual-frame.visual-frame--photo {
+  aspect-ratio: 950 / 1270;
+}
+
 /* ---------- подвал ---------- */
 
 .site-footer {
