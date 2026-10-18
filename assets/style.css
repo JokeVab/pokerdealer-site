@@ -239,11 +239,40 @@ button.lang-switch {
 /* ---------- рамка телефона для настоящих скринов/видео ---------- */
 
 .visual-frame {
+  position: relative;
   display: block;
   overflow: hidden;
   background: rgba(4, 33, 26, 0.55);
   border: 1px solid rgba(220, 174, 85, 0.35);
   border-radius: 14px;
+}
+
+.play-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+  border: 1px solid rgba(220, 174, 85, 0.6);
+  border-radius: 50%;
+  background: rgba(4, 33, 26, 0.72);
+  cursor: pointer;
+}
+
+.play-video::before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 0.6rem 0 0.6rem 1rem;
+  border-color: transparent transparent transparent var(--lamp);
+  transform: translateX(0.1rem);
+}
+
+.play-video[hidden] {
+  display: none;
 }
 
 .section--paper .visual-frame {
