@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /go/
+Disallow: /404.html
+
+Sitemap: https://pokerdealer.vip/sitemap.xml

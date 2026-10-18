@@ -602,6 +602,52 @@ button.lang-switch {
 
 .legal-back:hover, .legal-back:focus-visible { text-decoration: underline; }
 
+/* ---------- гайды: таблица комбинаций и печать шпаргалки ---------- */
+
+.rankings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.rankings-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--paper-ink-soft);
+  font-size: 0.95rem;
+}
+
+.rankings-table td:first-child {
+  width: 2rem;
+  color: var(--paper-ink-soft);
+}
+
+.btn-print {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--burgundy);
+  border-radius: 0.4rem;
+  background: none;
+  color: var(--burgundy);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-print:hover, .btn-print:focus-visible {
+  background: var(--burgundy);
+  color: var(--paper);
+}
+
+@media print {
+  body.guide-print .site-header,
+  body.guide-print .site-footer,
+  body.guide-print .btn-print,
+  body.guide-print .cheat-sheet h2,
+  body.guide-print main .wrap > *:not(.cheat-sheet) {
+    display: none !important;
+  }
+}
+
 /* ---------- форма связи ---------- */
 
 .contact-form {
