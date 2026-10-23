@@ -384,7 +384,8 @@ button.lang-switch {
 }
 
 .pain-card {
-  background: rgba(4, 33, 26, 0.5);
+  background: var(--felt);
+  color: var(--ink);
   box-shadow: inset 3px 0 0 var(--brass);
   border-radius: 4px;
   padding: 1.1rem 1.25rem;
@@ -410,6 +411,19 @@ button.lang-switch {
 .pain-card .visual-frame {
   aspect-ratio: 16 / 10;
   margin-top: 0.75rem;
+}
+
+/* ---------- схема стола: общий экран посреди стола (S38) ---------- */
+
+.table-scheme {
+  max-width: 40rem;
+  margin: 1.5rem auto 0;
+}
+
+.table-scheme svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ---------- слайдер скринов (CSS scroll-snap, без библиотек) ---------- */
@@ -880,6 +894,13 @@ button.lang-switch {
   .steps { display: contents; }
 
   .pain-grid { grid-template-columns: 1fr 1fr; }
+
+  /* в две колонки полноэкранный скрин 390×844 вырастал почти на ширину карточки (S38) */
+  .pain-card .visual-frame {
+    max-width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .site-footer .wrap { flex-direction: row; justify-content: space-between; align-items: center; }
 }
