@@ -120,7 +120,7 @@
           <h3>Ждать, пока один тасует, не придётся.</h3>
           <p>Колоду тасует и сдаёт сервер по одному нажатию. Уметь сдавать за столом не нужно никому.</p>
           <div class="visual-frame">
-            <img src="../assets/screens/waiting-deal.webp" width="390" height="844" loading="lazy" alt="Итоги раздачи и простая строка статуса: ждём, пока следующий игрок сдаст карты">
+            <img src="../assets/screens/deal-turn.webp" width="390" height="844" loading="lazy" alt="Телефон игрока, чья очередь сдавать: стол, итог раздачи и кнопка Deal next hand">
           </div>
         </div>
         <div class="pain-card">
@@ -164,9 +164,9 @@
             <img src="../assets/screens/rankings.webp" width="390" height="844" loading="lazy" alt="Шпаргалка комбинаций — от старшей карты до роял-флеша">
           </div>
         </div>
-        <div class="slider-dots" aria-hidden="true">
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
+        <div class="slider-dots">
+          <button type="button" class="slider-dot" aria-label="Показать экран 1 из 2"></button>
+          <button type="button" class="slider-dot" aria-label="Показать экран 2 из 2"></button>
         </div>
       </div>
     </div>
@@ -190,10 +190,10 @@
             <img src="../assets/screens/stats.webp" width="390" height="844" loading="lazy" alt="Вкладка Stats: у каждого игрока — выигранные раздачи, вскрытия, ва-банки, камбэки и неудачи">
           </div>
         </div>
-        <div class="slider-dots" aria-hidden="true">
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
+        <div class="slider-dots">
+          <button type="button" class="slider-dot" aria-label="Показать экран 1 из 3"></button>
+          <button type="button" class="slider-dot" aria-label="Показать экран 2 из 3"></button>
+          <button type="button" class="slider-dot" aria-label="Показать экран 3 из 3"></button>
         </div>
       </div>
     </div>
@@ -214,15 +214,32 @@
             <img src="../assets/screens/share-combo-ru.webp" width="390" height="844" loading="lazy" alt="Картинка «поделиться» 9:16 с итогом раздачи — каре">
           </div>
         </div>
-        <div class="slider-dots" aria-hidden="true">
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
+        <div class="slider-dots">
+          <button type="button" class="slider-dot" aria-label="Показать экран 1 из 2"></button>
+          <button type="button" class="slider-dot" aria-label="Показать экран 2 из 2"></button>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section section--paper">
+    <div class="wrap">
+      <div class="final-cta">
+        <div class="final-cta-copy">
+          <h2>На следующей игре карты раздадут телефоны</h2>
+          <p>Создайте стол, киньте друзьям ссылку — и раздавайте.</p>
+          <a class="btn-primary" href="../go/site-ru/" data-cta-block="final">Создать стол</a>
+          <p class="cta-caption">Бесплатно · в Telegram или <a class="inline-link" href="../go/site-ru-web/" data-cta-block="final-web">в браузере</a></p>
+        </div>
+        <div class="visual-frame">
+          <video src="../assets/win.mp4" poster="../assets/win-poster.webp" width="390" height="546" data-autoplay loop muted playsinline></video>
+          <button type="button" class="play-video" data-video-trigger hidden aria-label="Воспроизвести видео"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--felt">
     <div class="wrap">
       <div class="section-head">
         <h2>Вопросы и ответы</h2>
@@ -252,23 +269,6 @@
           <summary>Приложение на русском?</summary>
           <p>Интерфейс на английском. На русском — подсказки режима новичка и картинки «поделиться», если телефон на русском. Кнопки торговли — Check, Call, Bet, Raise, Fold, All-in.</p>
         </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--felt">
-    <div class="wrap">
-      <div class="final-cta">
-        <div class="final-cta-copy">
-          <h2>На следующей игре карты раздадут телефоны</h2>
-          <p>Создайте стол, киньте друзьям ссылку — и раздавайте.</p>
-          <a class="btn-primary" href="../go/site-ru/" data-cta-block="final">Создать стол</a>
-          <p class="cta-caption">Бесплатно · в Telegram или <a class="inline-link" href="../go/site-ru-web/" data-cta-block="final-web">в браузере</a></p>
-        </div>
-        <div class="visual-frame">
-          <video src="../assets/win.mp4" poster="../assets/win-poster.webp" width="390" height="844" data-autoplay loop muted playsinline></video>
-          <button type="button" class="play-video" data-video-trigger hidden aria-label="Воспроизвести видео"></button>
-        </div>
       </div>
     </div>
   </section>

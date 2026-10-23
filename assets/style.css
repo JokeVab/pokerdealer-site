@@ -429,8 +429,16 @@ button.lang-switch {
   height: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  cursor: grab;
+}
+
+.visual-slider .slider-track.is-dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
 }
 
 .visual-slider .slider-track::-webkit-scrollbar {
@@ -447,22 +455,32 @@ button.lang-switch {
 .visual-slider .slider-dots {
   position: absolute;
   left: 50%;
-  bottom: 0.6rem;
+  bottom: calc(0.6rem - 9px);
   transform: translateX(-50%);
   display: flex;
-  gap: 0.4rem;
   z-index: 2;
 }
 
+/* точка 6px, кликабельная зона 24px за счёт прозрачного padding */
 .visual-slider .slider-dot {
+  box-sizing: content-box;
   width: 6px;
   height: 6px;
+  padding: 9px;
+  border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.35);
+  background-clip: content-box;
+  cursor: pointer;
+}
+
+.visual-slider .slider-dot:focus-visible {
+  outline: 2px solid var(--lamp);
+  outline-offset: -2px;
 }
 
 .visual-slider .slider-dot.is-active {
-  background: var(--brass);
+  background-color: var(--brass);
 }
 
 /* ---------- FAQ ---------- */
@@ -509,10 +527,18 @@ button.lang-switch {
 
 /* ---------- финальный блок ---------- */
 
+/* всё по центру: текст, под ним широкая кнопка и анимация одной ширины */
 .final-cta {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.75rem;
+}
+
+.final-cta .btn-primary,
+.final-cta .visual-frame {
+  width: 100%;
+  max-width: 26rem;
 }
 
 .final-cta .visual-placeholder {
@@ -768,9 +794,13 @@ button.lang-switch {
 
 /* скрины 390×844 — показываем целиком, без обрезки под чужой аспект блока */
 .live-poker .visual-frame,
-.pain-card .visual-frame,
-.final-cta .visual-frame {
+.pain-card .visual-frame {
   aspect-ratio: 390 / 844;
+}
+
+/* win.mp4 обрезан до верхней части экрана: фейерверк, «You win!», места 1st–4th (S37) */
+.final-cta .visual-frame {
+  aspect-ratio: 390 / 546;
 }
 
 /* шаги 1–3: кропы разной естественной пропорции (S27), свой натуральный аспект вместо рамки телефона */
@@ -786,7 +816,6 @@ button.lang-switch {
   .hero-copy,
   .live-poker-copy,
   .section-head,
-  .final-cta-copy,
   .pain-card,
   .btn-primary-wrap,
   .section > .wrap > p {
@@ -822,6 +851,8 @@ button.lang-switch {
 
   .visual-slider--solo {
     max-width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero .wrap {
@@ -849,11 +880,6 @@ button.lang-switch {
   .steps { display: contents; }
 
   .pain-grid { grid-template-columns: 1fr 1fr; }
-
-  .final-cta { flex-direction: row; align-items: center; }
-  .final-cta-copy { flex: 1 1 22rem; }
-  .final-cta .visual-placeholder { flex: 1 1 26rem; width: auto; }
-  .final-cta .visual-frame { flex: 1 1 18rem; width: auto; aspect-ratio: 9 / 16; }
 
   .site-footer .wrap { flex-direction: row; justify-content: space-between; align-items: center; }
 }

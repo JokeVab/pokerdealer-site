@@ -120,7 +120,7 @@
           <h3>No more waiting on the shuffle.</h3>
           <p>The server shuffles and deals on one tap. Nobody at the table has to know how.</p>
           <div class="visual-frame">
-            <img src="assets/screens/waiting-deal.webp" width="390" height="844" loading="lazy" alt="Showdown result with a plain status line: waiting for the next player to deal">
+            <img src="assets/screens/deal-turn.webp" width="390" height="844" loading="lazy" alt="Phone of the player whose turn it is to deal: the table, the showdown result and the Deal next hand button">
           </div>
         </div>
         <div class="pain-card">
@@ -164,9 +164,9 @@
             <img src="assets/screens/rankings.webp" width="390" height="844" loading="lazy" alt="Hand-rankings cheat sheet, from High Card to Royal Flush">
           </div>
         </div>
-        <div class="slider-dots" aria-hidden="true">
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
+        <div class="slider-dots">
+          <button type="button" class="slider-dot" aria-label="Show screen 1 of 2"></button>
+          <button type="button" class="slider-dot" aria-label="Show screen 2 of 2"></button>
         </div>
       </div>
     </div>
@@ -190,10 +190,10 @@
             <img src="assets/screens/stats.webp" width="390" height="844" loading="lazy" alt="Stats tab: each player's hands won, showdowns, all-ins, comebacks and bad beats">
           </div>
         </div>
-        <div class="slider-dots" aria-hidden="true">
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
+        <div class="slider-dots">
+          <button type="button" class="slider-dot" aria-label="Show screen 1 of 3"></button>
+          <button type="button" class="slider-dot" aria-label="Show screen 2 of 3"></button>
+          <button type="button" class="slider-dot" aria-label="Show screen 3 of 3"></button>
         </div>
       </div>
     </div>
@@ -214,15 +214,32 @@
             <img src="assets/screens/share-combo.webp" width="390" height="844" loading="lazy" alt="Share sheet with a 9:16 picture of the winning hand, Four of a Kind">
           </div>
         </div>
-        <div class="slider-dots" aria-hidden="true">
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
+        <div class="slider-dots">
+          <button type="button" class="slider-dot" aria-label="Show screen 1 of 2"></button>
+          <button type="button" class="slider-dot" aria-label="Show screen 2 of 2"></button>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section section--paper">
+    <div class="wrap">
+      <div class="final-cta">
+        <div class="final-cta-copy">
+          <h2>Next game night, let the phones deal</h2>
+          <p>Create a table, send the link, deal the first hand.</p>
+          <a class="btn-primary" href="go/site-en/" data-cta-block="final">Start a table</a>
+          <p class="cta-caption">Free · in Telegram or <a class="inline-link" href="go/site-en-web/" data-cta-block="final-web">your browser</a></p>
+        </div>
+        <div class="visual-frame">
+          <video src="assets/win.mp4" poster="assets/win-poster.webp" width="390" height="546" data-autoplay loop muted playsinline></video>
+          <button type="button" class="play-video" data-video-trigger hidden aria-label="Play video"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--felt">
     <div class="wrap">
       <div class="section-head">
         <h2>FAQ</h2>
@@ -252,23 +269,6 @@
           <summary>Do I have to download something?</summary>
           <p>No. It's not in the App Store or Google Play — it opens right in Telegram or in a browser.</p>
         </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--felt">
-    <div class="wrap">
-      <div class="final-cta">
-        <div class="final-cta-copy">
-          <h2>Next game night, let the phones deal</h2>
-          <p>Create a table, send the link, deal the first hand.</p>
-          <a class="btn-primary" href="go/site-en/" data-cta-block="final">Start a table</a>
-          <p class="cta-caption">Free · in Telegram or <a class="inline-link" href="go/site-en-web/" data-cta-block="final-web">your browser</a></p>
-        </div>
-        <div class="visual-frame">
-          <video src="assets/win.mp4" poster="assets/win-poster.webp" width="390" height="844" data-autoplay loop muted playsinline></video>
-          <button type="button" class="play-video" data-video-trigger hidden aria-label="Play video"></button>
-        </div>
       </div>
     </div>
   </section>
