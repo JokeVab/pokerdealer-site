@@ -10,13 +10,17 @@
 <script>
 (function () {
   var target = 'https://t.me/PokerDealerAppBot/play?startapp=src_seed-budetvsaranske';
+  // Кнопка лендинга, куда человек пришёл по другой короткой ссылке (/go/site-ru/?from=linkedin): приложению уходит исходная метка.
+  var from = new URLSearchParams(location.search).get('from');
+  if (!/^[a-z0-9][a-z0-9-]{0,63}$/.test(from || '')) from = undefined;
+  if (from) target = 'https://t.me/PokerDealerAppBot/play?startapp=src_' + from;
   try {
     var id = (crypto.randomUUID ? crypto.randomUUID() : 'anon-' + Math.random().toString(36).slice(2) + Date.now());
     var payload = {
       api_key: 'phc_rDR9qcCQBfLa2HobCuXHeYKGAoSgr5sSjQmptjsccc7S',
       event: 'go_redirect',
       distinct_id: id,
-      properties: { source: 'seed-budetvsaranske', $process_person_profile: false }
+      properties: { source: 'seed-budetvsaranske', from: from, $process_person_profile: false }
     };
     var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
     navigator.sendBeacon('https://eu.i.posthog.com/i/v0/e/', blob);

@@ -15,6 +15,15 @@
 
   posthog.capture('$pageview');
 
+  // Пришли по короткой ссылке на лендинг (/go/linkedin/ → ?src=linkedin): метка едет дальше в кнопки (/go/site-ru/?from=linkedin),
+  // и приложение узнаёт исходный источник, а не просто «с сайта».
+  var src = new URLSearchParams(location.search).get('src');
+  if (/^[a-z0-9][a-z0-9-]{0,63}$/.test(src || '')) {
+    document.querySelectorAll('a[data-cta-block]').forEach(function (a) {
+      a.setAttribute('href', a.getAttribute('href') + '?from=' + src);
+    });
+  }
+
   document.addEventListener('click', function (event) {
     var el = event.target.closest('[data-cta-block]');
     if (!el) return;
