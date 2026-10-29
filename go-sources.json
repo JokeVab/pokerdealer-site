@@ -1,7 +1,8 @@
 {
   "targets": {
     "telegram": "https://t.me/PokerDealerAppBot/play",
-    "web": "https://play.pokerdealer.vip/"
+    "web": "https://play.pokerdealer.vip/",
+    "landing-ru": "https://pokerdealer.vip/ru/"
   },
   "sources": {
     "site-en": "telegram",
@@ -10,7 +11,7 @@
     "site-ru-web": "web",
     "reddit": "telegram",
     "tg-channel": "telegram",
-    "linkedin": "telegram",
+    "linkedin": "landing-ru",
     "instagram": "telegram",
     "facebook": "telegram",
     "vk": "telegram",
