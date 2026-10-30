@@ -57,6 +57,8 @@
       <a id="footer-guides-ru" href="ru/guides/" hidden>Гайды</a>
       <a id="footer-contact-en" href="contact/">Contact</a>
       <a id="footer-contact-ru" href="ru/contact/" hidden>Связаться</a>
+      <a id="footer-channel-en" href="https://t.me/playpokerdealer" target="_blank" rel="noopener">Telegram channel</a>
+      <a id="footer-channel-ru" href="https://t.me/playpokerdealer" target="_blank" rel="noopener" hidden>Telegram-канал</a>
     </div>
   </div>
 </footer>
@@ -70,6 +72,8 @@
     var footerRu = document.getElementById('footer-contact-ru');
     var footerGuidesEn = document.getElementById('footer-guides-en');
     var footerGuidesRu = document.getElementById('footer-guides-ru');
+    var footerChannelEn = document.getElementById('footer-channel-en');
+    var footerChannelRu = document.getElementById('footer-channel-ru');
     toggle.addEventListener('click', function () {
       var toRu = ru.hidden;
       en.hidden = toRu;
@@ -78,6 +82,8 @@
       footerRu.hidden = !toRu;
       footerGuidesEn.hidden = toRu;
       footerGuidesRu.hidden = !toRu;
+      footerChannelEn.hidden = toRu;
+      footerChannelRu.hidden = !toRu;
       document.documentElement.lang = toRu ? 'ru' : 'en';
       toggle.textContent = toRu ? 'EN' : 'RU';
     });
