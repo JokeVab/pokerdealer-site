@@ -2,7 +2,8 @@
   "targets": {
     "telegram": "https://t.me/PokerDealerAppBot/play",
     "web": "https://play.pokerdealer.vip/",
-    "landing-ru": "https://pokerdealer.vip/ru/"
+    "landing-ru": "https://pokerdealer.vip/ru/",
+    "landing-en": "https://pokerdealer.vip/"
   },
   "sources": {
     "site-en": "telegram",
@@ -20,7 +21,7 @@
     "findmini": "telegram",
     "youtube": "telegram",
     "tiktok": "telegram",
-    "reels": "telegram",
+    "reels": "landing-en",
     "seo-poker-hand-rankings": "telegram",
     "seo-how-to-host-a-poker-night": "telegram",
     "seo-poker-night-without-a-dealer": "telegram",
