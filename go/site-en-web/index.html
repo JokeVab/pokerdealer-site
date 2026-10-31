@@ -14,7 +14,11 @@
   var from = new URLSearchParams(location.search).get('from');
   if (!/^[a-z0-9][a-z0-9-]{0,63}$/.test(from || '')) from = undefined;
   if (from) target = 'https://play.pokerdealer.vip/?src=' + from;
+  // Зеркало, localhost и браузер Сани (?me=1 на лендинге) событий не шлют.
+  var muted = !/^(www\.)?pokerdealer\.vip$/.test(location.hostname);
+  try { if (localStorage.getItem('pd_me') === '1') muted = true; } catch (e) {}
   try {
+    if (muted) throw 0;
     var id = (crypto.randomUUID ? crypto.randomUUID() : 'anon-' + Math.random().toString(36).slice(2) + Date.now());
     var payload = {
       api_key: 'phc_rDR9qcCQBfLa2HobCuXHeYKGAoSgr5sSjQmptjsccc7S',
