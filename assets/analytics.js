@@ -1,4 +1,4 @@
-/* PostHog JS, EU-хост, без cookies: cookieless_mode 'always' (посетителя считает хэш на стороне PostHog, на устройстве ничего не лежит),
+/* PostHog JS, EU-проект через наш прокси play.pokerdealer.vip/relay (свои имена путей, чтобы не резали блокировщики), без cookies: cookieless_mode 'always' (посетителя считает хэш на стороне PostHog, на устройстве ничего не лежит),
    без автозахвата и записи сессий. Сайт шлёт $pageview, $pageleave, cta_click {lang, block} и page_not_found {path, referrer} со 404.
    События идут только с pokerdealer.vip (зеркало GitHub Pages и localhost молчат). Свой браузер выключают ссылкой ?me=1 (?me=0 возвращает).
    Переходы по кнопкам считает go_redirect на /go/<источник>/. Нужна настройка проекта PostHog «Enable cookieless tracking»:
@@ -27,8 +27,25 @@
 
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
 
+  // Прокси на сервере приложения (этап 6.19 poker-dealer): пути PostHog переименованы, стандартные режут списки блокировщиков.
+  var RELAY = 'https://play.pokerdealer.vip/relay';
+  var REWRITES = [['/i/v0/e/', '/m1/'], ['/e/', '/m2/'], ['/flags/', '/m3/'], ['/array/', '/m4/'], ['/static/', '/m5/']];
+  function rewriteRequestPath(url) {
+    var prefix = new URL(RELAY).pathname;
+    for (var i = 0; i < REWRITES.length; i++) {
+      var from = prefix + REWRITES[i][0];
+      if (url.pathname.indexOf(from) === 0) {
+        url.pathname = prefix + REWRITES[i][1] + url.pathname.slice(from.length);
+        break;
+      }
+    }
+    return url;
+  }
+
   posthog.init('phc_rDR9qcCQBfLa2HobCuXHeYKGAoSgr5sSjQmptjsccc7S', {
-    api_host: 'https://eu.i.posthog.com',
+    api_host: RELAY,
+    ui_host: 'https://eu.posthog.com',
+    rewriteRequestPath: rewriteRequestPath,
     defaults: '2026-05-30',
     cookieless_mode: 'always',
     autocapture: false,

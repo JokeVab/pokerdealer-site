@@ -26,7 +26,8 @@
         properties: { lang: lang, result: result, $process_person_profile: false },
       };
       var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-      navigator.sendBeacon('https://eu.i.posthog.com/i/v0/e/', blob);
+      // Через наш прокси со своим именем пути, как страницы /go/: прямой адрес PostHog режут блокировщики.
+      navigator.sendBeacon('https://play.pokerdealer.vip/relay/m1/', blob);
     } catch (e) {}
   }
 
